@@ -24,7 +24,7 @@ import {
 
 const NavLink = (props: LinkProps) => (
 	<Link {...props} activeClassName="active" />
-)
+);
 
 interface MasterContext {
 	router: InjectedRouter;
@@ -33,7 +33,7 @@ interface MasterContext {
 class Master extends Component<any, any> {
 
 	static contextTypes: ValidationMap<any> = {
-		"router": routerShape
+		router: routerShape
 	};
 
 	context: MasterContext;
@@ -53,14 +53,14 @@ class Master extends Component<any, any> {
 			<h1>Master</h1>
 			<Link to="/">Dashboard</Link> <NavLink to="/users">Users</NavLink>
 			<p>{this.props.children}</p>
-		</div>
+		</div>;
 	}
 
 }
 
 interface DashboardProps {
-	router: InjectedRouter
-};
+	router: InjectedRouter;
+}
 
 class Dashboard extends React.Component<DashboardProps, {}> {
 
@@ -77,32 +77,32 @@ class Dashboard extends React.Component<DashboardProps, {}> {
 	render() {
 		return <div>
 			This is a dashboard
-		</div>
+		</div>;
 	}
 
 }
 
-const DashboardWithRouter = withRouter(Dashboard)
+const DashboardWithRouter = withRouter(Dashboard);
 
 class NotFound extends React.Component<{}, {}> {
 
 	render() {
 		return <div>
 			This path does not exists
-		</div>
+		</div>;
 	}
 
 }
 
-interface UsersProps extends RouteComponentProps<{}, {}> { }
+type UsersProps = RouteComponentProps<{}, {}>;
 
 class Users extends React.Component<UsersProps, {}> {
 
 	render() {
-                const { location, params, route, routes, router, routeParams } = this.props;
+		const { location, params, route, routes, router, routeParams } = this.props;
 		return <div>
 			This is a user list
-		</div>
+		</div>;
 	}
 
 }
@@ -116,7 +116,7 @@ ReactDOM.render((
 			<Route path="*" component={NotFound}/>
 		</Route>
 	</Router>
-), document.body)
+), document.body);
 
 
 const history = createMemoryHistory("baseurl");
