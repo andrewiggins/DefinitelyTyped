@@ -1,8 +1,7 @@
-// Type definitions for object-assign 4.0.1
+// Type definitions for object-assign 4.0
 // Project: https://github.com/sindresorhus/object-assign
-// Definitions by: Christopher Brown <https://github.com/chbrown>
+// Definitions by: Christopher Brown <https://github.com/chbrown>, Andre Wiggins <https://github.com/andrewiggins>
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
-
 
 declare function objectAssign<T, U>(target: T, source: U): T & U;
 declare function objectAssign<T, U, V>(target: T, source1: U, source2: V): T & U & V;

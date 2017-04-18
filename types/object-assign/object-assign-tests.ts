@@ -8,41 +8,31 @@ interface Source1 {
   source1: string;
 }
 
-interface Result extends Target, Source1 {
-  
-}
+interface Result extends Target, Source1 { }
 
 interface Source2 {
   source2: string;
 }
 
-interface Result2 extends Result, Source2 {
-  
-}
+interface Result2 extends Result, Source2 { }
 
 interface Source3 {
   source3: string;
 }
 
-interface Result3 extends Result2, Source3 {
-  
-}
+interface Result3 extends Result2, Source3 { }
 
 interface Source4 {
   source4: string;
 }
 
-interface Result4 extends Result3, Source4 {
-  
-}
+interface Result4 extends Result3, Source4 { }
 
 interface Source5 {
   source5: string;
 }
 
-interface Result5 extends Result4, Source5 {
-  
-}
+interface Result5 extends Result4, Source5 { }
 
 function assign1(): Result {
   return objectAssign({hellow: "world"}, {source1: "U"});
@@ -75,4 +65,3 @@ function assign() {
     generic: "any"
   });
 }
-
