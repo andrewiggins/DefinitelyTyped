@@ -633,8 +633,10 @@ let isolateScope: ng.IScope = element.isolateScope();
 isolateScope = element.find('div').isolateScope();
 isolateScope = element.children().isolateScope();
 let element2 = angular.element(element);
-let firstRawElement = element[0];
-let elementArray = angular.element(firstRawElement.querySelectorAll('div'));
+let elementArray = angular.element(document.querySelectorAll('div'));
+
+// Validate index signature
+element[0].querySelectorAll('body');
 
 // $timeout signature tests
 namespace TestTimeout {
