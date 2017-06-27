@@ -20,11 +20,12 @@
 //                 Dick van den Brink <https://github.com/DickvdBrink>
 //                 Thomas Schulz <https://github.com/King2500>
 //                 Leonard Thieu <https://github.com/leonard-thieu>
+//                 Andre Wiggins <https://github.com/andrewiggins>
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
 
 // Definitions copied from https://github.com/DefinitelyTyped/DefinitelyTyped/blob/0480c5ec87fab41aa23047a02b27f0ea71aaf975/types/jquery/v2/index.d.ts
 
-interface JQuery {
+interface JQuery<TElement extends Node = HTMLElement> extends ArrayLike<TElement> {
     /**
      * Adds the specified class(es) to each of the set of matched elements.
      *
@@ -648,9 +649,6 @@ interface JQuery {
      */
     wrap(func: (index: number) => string | JQuery): JQuery;
 
-    // Undocumented
-    length: number;
-
     // TODO: events, how to define?
     // $destroy
 
@@ -666,7 +664,7 @@ interface JQuery {
 }
 
 interface JQueryStatic {
-    (element: string | Element | Document): JQuery;
+    (element: string | Element | Document | JQuery | ArrayLike<Element>): JQuery;
 }
 
 /**
