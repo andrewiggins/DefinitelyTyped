@@ -25,6 +25,16 @@
 
 // Definitions copied from https://github.com/DefinitelyTyped/DefinitelyTyped/blob/0480c5ec87fab41aa23047a02b27f0ea71aaf975/types/jquery/v2/index.d.ts
 
+// jqLite Index Signature
+// Do to incompatibilities between JQuery 2.x and 3.x typings, we can't include
+// a type in this file for JQuery's index signature that is compatible with all of
+// JQuery 2.x, JQuery 3.x and no JQuery. If you use JQuery with Angular, then
+// TypeScript will use your version of JQuery's index signature. However if you don't want
+// to use JQuery and use jqLite only, then add the following interface in your code
+// to extend the jqLite JQuery interface to include the index signature ([index: number]: HTMLElement)
+//
+// interface JQuery extends ArrayLike<HTMLElement> {}
+
 interface JQuery {
     /**
      * Adds the specified class(es) to each of the set of matched elements.
